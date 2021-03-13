@@ -7,6 +7,7 @@ defmodule ApipagWeb.Router do
 
   scope "/api", ApipagWeb do
     pipe_through :api
+    get "/", WelcomeController, :index
   end
 
   # Enables LiveDashboard only for development
