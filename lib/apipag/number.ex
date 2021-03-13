@@ -1,8 +1,11 @@
 defmodule Apipag.Number do
   def sun(filename) do
+    #pipeline
     "#{filename}.csv"
     |> File.read()
     |> handle_file()
+
+      #modo comvencional
      #file = File.read("#{filename}.csv")
     #handle_file(file)
 
