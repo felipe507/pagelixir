@@ -12,9 +12,18 @@ defmodule Apipag.Number do
 
   end
 
+  defp handle_file({:ok, result}) do
+    result =
+    result |> String.split( ",")
+    |> Enum.map(fn number -> String.to_integer(number) end)
+    |> Enum.sum()
+    {:ok, %{result: result}}
 
-  defp handle_file({:ok, file }), do: file
-  defp handle_file({:error, _reason}), do: {:error,  "Invalid data"}
+
+  end
+
+  #defp handle_file({:ok, file }), do: file
+  #defp handle_file({:error, _reason}), do: {:error,  "Invalid data"}
 
 
 end
